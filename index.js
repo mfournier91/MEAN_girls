@@ -18,6 +18,9 @@ app.listen(4000, function(){
   console.log("app listening on port 4000");
 })
 
+app.get("/", function(req, res){
+  res.render("girls")
+})
 app.get("/burnbook", girlsController.index)
 
 app.get("/girls/new", girlsController.new)
@@ -26,3 +29,5 @@ app.get("/girls/:id", girlsController.show)
 app.get("/girls/:id/edit", girlsController.edit)
 app.put("/girls/:id", girlsController.update)
 app.delete("/girls/:id", girlsController.delete)
+
+app.use(require("better-express-errors")(app))
