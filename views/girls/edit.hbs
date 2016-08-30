@@ -1,0 +1,14 @@
+<h2>Edit {{girl.name}}</h2>
+<form action="/girls/{{girl._id}}?_method=put" method="post">
+<label>Name:</label>
+<input type="text" name="name" value="{{girl.name}}">
+<label>offense:</label>
+<input type="text" name="offense" value="{{girl.offense}}">
+<label>imageUrl:</label>
+<input type="text" name="imageUrl" value="{{girl.imageUrl}}">
+<input type="submit">
+</form>
+
+<form action="/girls/{{girl._id}}?_method=delete" method="post">
+  <input type="submit" value="Burn the Burn Betch">
+</form>
