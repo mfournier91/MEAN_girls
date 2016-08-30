@@ -1,0 +1,11 @@
+<a href="/girls/new">New burnbook Victim</a>
+
+{{#each girls}}
+<div class="girl">
+  <a href="/girls/{{_id}}">{{name}}</a>
+  <p>
+    {{offense}}
+  </p>
+  <img src="{{imageUrl}}" alt="{{name}}" />
+</div>
+{{/each}}
