@@ -12,10 +12,11 @@
   ]);
 
   function Router($stateProvider){
+    console.log("router hit");
     $stateProvider
     .state("welcome", {
       url: "/",
-      templateUrl: "assets/html/girls-welcome.html"
+      templateUrl: "../html/girls-welcome.html"
     });
   }
 })();
