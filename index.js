@@ -19,3 +19,7 @@ app.listen(4000, function(){
 })
 
 app.get("/burnbook", girlsController.index)
+
+app.get("/girls/new", girlsController.new)
+app.post("/burnbook", girlsController.create)
+app.get("/girls/:id", girlsController.show)
