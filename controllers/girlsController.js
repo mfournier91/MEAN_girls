@@ -7,27 +7,30 @@ var girlsController = {
       res.json(docs);
     })
   },
-  new: function(req, res){
-    res.render("girls/new")
-  },
+  // new: function(req, res){
+  //   res.render("girls/new")
+  // },
   create: function(req,res){
     var girl = new GirlModel({name: req.body.name, offense: req.body.offense, imageUrl: req.body.imageUrl})
-    girl.save(function(err){
-      if(!err){
-        res.redirect("burnbook")
-      }
+    // girl.save(function(err){
+    //   if(!err){
+    //     res.redirect("burnbook")
+    //   }
+    // })
+    girl.save().then(function(newgirl){
+      res.json(newgirl);
     })
   },
   show: function(req, res){
     GirlModel.findById(req.params.id, function(err, doc){
-      res.render("girls/show", {girl: doc})
+      res.json(doc)
     })
   },
-  edit: function(req, res){
-    GirlModel.findById(req.params.id, function(err, doc){
-      res.render("girls/edit", {girl: doc})
-    })
-  },
+  // edit: function(req, res){
+  //   GirlModel.findById(req.params.id, function(err, doc){
+  //     res.render("girls/edit", {girl: doc})
+  //   })
+  // },
   update: function(req, res){
     GirlModel.findById(req.params.id, function(err, docs){
       docs.name = req.body.name
@@ -35,7 +38,8 @@ var girlsController = {
       docs.imageUrl = req.body.imageUrl
       docs.save(function(err){
         if(!err){
-          res.redirect("/girls/" + req.params.id)
+          //res.redirect("/girls/" + req.params.id)
+          res.json(docs)
         }
       })
     })
@@ -43,7 +47,7 @@ var girlsController = {
   delete: function(req, res){
     GirlModel.remove({_id: req.params.id}, function(err){
       if(!err){
-        res.redirect("/burnbook")
+        res.json({success: true});
       }
     })
   }
