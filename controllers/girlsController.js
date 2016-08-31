@@ -3,7 +3,8 @@ var GirlModel = require("../models/girl")
 var girlsController = {
   index: function(req, res){
     GirlModel.find({}, function(err, docs){
-      res.render("girls/index", {girls: docs})
+      // res.render("girls/index", {girls: docs})
+      res.json(docs);
     })
   },
   new: function(req, res){
