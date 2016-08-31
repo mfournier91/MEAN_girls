@@ -1,7 +1,7 @@
 <h2>These are all the burnbook victims</h2>
 <div data-ng-repeat="girl in GirlIndexControllerVM.girls">
   <p>
-    <a data-ui-sref="girlShow({id: girl.id})">{{girl.name}}</a>
+    <a data-ui-sref="show({id: girl._id})">{{girl.name}}</a>
   </p>
 
   <img ng-src="{{girl.imageUrl}}" alt="{{girl.name}}" class="smallpic"/>

@@ -17,6 +17,11 @@
   .controller("GirlIndexController", [
     "GirlFactory",
     GirlIndexControllerFunction
+  ])
+  .controller("GirlShowController", [
+    "GirlFactory",
+    "$stateParams",
+    GirlShowControllerFunction
   ]);
 
   function Router($stateProvider){
@@ -31,6 +36,12 @@
       templateUrl: "../html/girls-index.html",
       controller: "GirlIndexController",
       controllerAs: "GirlIndexControllerVM"
+    })
+    .state("show", {
+      url: "/girls/:id",
+      templateUrl: "../html/girls-show.html",
+      controller: "GirlShowController",
+      controllerAs: "GirlShowControllerVM"
     });
   }
 
@@ -46,5 +57,11 @@
     var vm = this;
     vm.girls = GirlFactory.all;
   }
+
+  function GirlShowControllerFunction(GirlFactory, $stateParams){
+  var vm = this;
+  vm.girl = GirlFactory.get({id: $stateParams.id})
+  console.log("Girl!: ", vm.girl);
+}
 
 })();
