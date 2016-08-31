@@ -4,3 +4,11 @@
 .bigpic {
   width: 500px;
 }
+body {
+  font-family: 'Permanent Marker', cursive;
+  background: url(http://i.imgur.com/fXpWkAu.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
