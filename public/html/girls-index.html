@@ -1,6 +1,6 @@
 <h2>These are all the burnbook victims</h2>
 
-<button data-ng-hide="newgirl" data-ng-click="newgirl = !newgirl">New grumble</button>
+<button data-ng-hide="newgirl" data-ng-click="newgirl = !newgirl">New victim</button>
 <form data-ng-show="newgirl" data-ng-submit="GirlIndexControllerVM.create(); newgirl = !newgirl">
   <input placeholder="name" data-ng-model="GirlIndexControllerVM.newgirl.name" />
   <input placeholder="offense" data-ng-model="GirlIndexControllerVM.newgirl.offense" />
@@ -16,7 +16,5 @@
   </p>
 
   <img ng-src="{{girl.imageUrl}}" alt="{{girl.name}}" class="smallpic"/>
-
-  <p>{{girl.offense}}</p>
 
 </div>
