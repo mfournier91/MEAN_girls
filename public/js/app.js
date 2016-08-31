@@ -62,6 +62,15 @@
   var vm = this;
   vm.girl = GirlFactory.get({id: $stateParams.id})
   console.log("Girl!: ", vm.girl);
+
+  vm.update = function() {
+    vm.girl.$update({id: $stateParams.id});
+    console.log(vm.girl);
+  };
+
+  vm.delete = function() {
+    vm.girl.$delete({id: $stateParams.id})
+  };
 }
 
 })();

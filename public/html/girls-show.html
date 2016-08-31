@@ -3,3 +3,13 @@
 <p>
   {{GirlShowControllerVM.girl.offense}}
 </p>
+
+<button data-ng-hide="editGirl" data-ng-click="editGirl = !editGirl">Edit girl</button>
+<form data-ng-show="editGirl">
+  <input value="GirlShowControllerVM.girl.name" data-ng-model="GirlShowControllerVM.girl.name" />
+  <input value="GirlShowControllerVM.girl.offense" data-ng-model="GirlShowControllerVM.girl.offense" />
+  <input value="GirlShowControllerVM.girl.imageUrl" data-ng-model="GirlShowControllerVM.girl.imageUrl" />
+  <button class="update" data-ng-click="GirlShowControllerVM.update(); editGirl = !editGirl">Save</button>
+  <button data-ng-click='editGirl = !editGirl' class='cancel'>Cancel</button>
+  <button class="delete" data-ui-sref="index" data-ng-click="GirlShowControllerVM.delete()">Delete</button>
+</form>
