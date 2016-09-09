@@ -1,7 +1,7 @@
 #Instructions for installation and use on Mac.
 
-1.First, clone the repo and cd into it.
-2.Next you'll need npm and node installed.
+1. First, clone the repo and cd into it.
+2. Next you'll need npm and node installed.
 To check if you already have node and npm installed, type ```npm -v``` and ```node -v```
 into terminal. Both commands should give you a version number if you have it.
 Otherwise you will need to install them. Enter ```brew install node``` into your terminal.
