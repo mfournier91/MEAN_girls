@@ -29,6 +29,9 @@ mongodb. There's a bunch of commands for this step.
 7. Go back to the first terminal tab, you need the other one hanging with mongod running.  Now we need to run our schema and seed data. Enter:
     ```
     node db/schema.js
+    ```
+    and
+    ```
     node db/seeds.js
     ```
 Control-c to close the hanging seed file.
@@ -36,4 +39,4 @@ Control-c to close the hanging seed file.
     ```
     node index.js
     ```
-open localhost:4000 in your browser.
+open localhost:4000 in your browser. Click on the header that says "WDI 11 burn victims" to start.
